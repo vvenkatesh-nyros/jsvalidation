@@ -1,0 +1,536 @@
+
+function form_validate()
+{
+
+  if(uservalid()==0)
+  {
+	  
+      return false;
+  }
+  
+  if(passvalid()==0)
+  {
+    return false;
+  }
+  
+  if(firstvalid()==0)
+  {
+    return false;
+  }
+  if(lastvalid()==0)
+  {
+    return false;
+  }
+  if(profilevalid()==0)
+  {
+    return false;
+  }
+  if(dayvalid()==0)
+  {
+    return false;
+  }
+  if(monthvalid()==0)
+  {
+    return false;
+  }
+  if(yearvalid()==0)
+  {
+    return false;
+  }
+  if(hobbvalid()==0)
+  {
+    return false;
+  }
+  if(counvalid()==0)
+  {
+    return false;
+  }
+  if(phnovalid()==0)
+  {
+    return false;
+  }
+  
+  
+}
+
+
+
+/* user validation */
+
+function uservalid()
+{
+
+var p=document.forms["myForm"]["uname"].value;
+var uname= /^[a-zA-Z][a-zA-Z0-9]{5,8}/;
+if(p.match(uname))
+{
+    
+  return 1;
+
+}  
+else if(p == null || p == "" || p.length==0)
+{   
+
+   alert('user name must not be empty');
+   document.myForm.uname.focus();
+     return 0;
+}
+else{
+   alert('user name must be alphanumeric with 5 to 8 characters') ;
+    document.myForm.uname.focus();
+	return 0;
+  
+}
+
+
+}
+
+/* password validation */
+function passvalid(){
+  var p=document.forms["myForm"]["pwd"].value;
+var pwd= /^[a-zA-Z0-9]{6}/;
+if(p.match(pwd))
+{
+  
+   return 1;
+ 
+  
+}  
+else  if(p == null || p == "")
+{   
+alert('password must not be empty') ;
+document.myForm.pwd.focus();
+return 0;  
+}  
+else  
+{   
+alert('please enter password as alphanumeric of length 6 characters') ;
+  document.myForm.pwd.focus();
+return 0;  
+}  
+
+
+}
+
+
+
+/*firstname validation */
+
+function firstvalid()
+{
+
+
+var p=document.forms["myForm"]["fname"].value;
+var fname= /^[a-zA-Z]{2,6}/;
+if(p.match(fname))
+{
+   
+   return 1;
+}  
+
+
+else  if(p == null || p == "")
+{   
+alert('Fisrt name must not be empty');
+return 0;  
+}  
+else  
+{   
+alert('please enter Firstname of length 2 to 6 characters') ;
+  document.myForm.fname.focus();
+return 0;  
+}  
+
+
+}
+
+
+
+
+/* lastname validation */
+
+function lastvalid(){
+  var p=document.forms["myForm"]["lname"].value;
+var lname= /^[a-zA-Z]{2,15}/;
+if(p.match(lname))
+{
+ 
+  return 1;
+}  
+else  if(p == null || p == "")
+{   
+alert('Lastname must not be empty') ;
+document.myForm.lname.focus();
+return 0;  
+}  
+else  
+{   
+alert('please enter Lastname of length 2 to 15 characters ') ;
+  document.myForm.lname.focus();
+return 0;  
+}  
+
+
+}
+
+
+
+
+/*profilepic validation */
+
+function profilevalid(){
+var p=document.forms["myForm"]["pic"].value;
+var pic1=/.gif/;
+var pic2=/.jpg/;
+var pic3=/.jpeg/;
+var pic4=/.png/;
+
+
+if(p == null || p == "")
+{
+  alert("Upload your profile pic");
+  document.myForm.pic.focus();
+  return 0;
+} 
+
+else if(p.match(pic1) == false ||p.match(pic2) == false || p.match(pic3) == false || p.match(pic4)== false)
+	{
+ alert('upload only jpeg or jpg or png or gif format');
+  return 0;
+    }
+	else{
+		return 1;
+	}
+
+}
+
+
+
+
+/*date validation */
+
+function dayvalid(){
+var p=document.forms["myForm"]["day"].value;
+
+if(p == null || p == "")
+{
+  alert("please select the date  you have born");
+  document.myForm.day.focus();
+  return 0;
+}  
+else{
+  
+ return 1;
+    
+}
+
+}
+
+
+
+/*month validation */
+
+function monthvalid(){
+
+var p=document.forms["myForm"]["month"].value;
+
+if(p == null || p == "")
+{
+  alert("please select the month you have born");
+  document.myForm.month.focus();
+  return 0;
+}  
+else{
+ 
+    return 1;
+}
+}
+
+
+
+
+
+/*Year validation */
+
+function yearvalid(){
+
+var p=document.forms["myForm"]["year"].value;
+
+if(p == null || p == "")
+{
+  alert("please select the year you have born");
+  document.myForm.year.focus();
+  return 0;
+}  
+else{
+
+  return 1;
+}
+
+}
+
+
+
+/* Hobbie validation */
+
+function hobbvalid(){
+var p=document.forms["myForm"]["hobbies"].value;
+
+if(p == null || p == "")
+{
+  alert("select atleast one hobbie");
+
+  return 0;
+}  
+else{
+
+ return 1;
+    
+}
+}
+
+
+
+
+/*Country validation */
+
+function counvalid(){
+
+
+
+
+var p=document.forms["myForm"]["countries"].value;
+
+if(p == null || p == "")
+{
+  alert("select the country the you have been visited");
+
+  return 0;
+}  
+else{
+  
+return 1;
+   }
+
+
+}
+
+
+
+
+
+/* Phone validation */
+function phnovalid(){
+
+var p=document.forms["myForm"]["pno"].value;
+var phno= /^[+](\s)[0-9]{2}(\s)[(][0-9]{3}[)][-][0-9]{3}[-][0-9]{4}$/;
+if(p.match(phno))
+{
+
+  
+ return 1;
+
+}  
+else  if(p == null || p == "")
+{   
+alert('phone number must not be empty') ;
+document.myForm.pno.focus();
+return 0;  
+}  
+else  
+{   
+alert('please enter phone number in the format + 91 (000)-885-9894 ') ;
+return 0;  
+}  
+
+}
+
+
+
+
+
+
+
+function uservalid1()
+{
+
+var p=document.forms["myForm"]["uname"].value;
+var uname= /^[a-zA-Z][a-zA-Z0-9]{5,8}/;
+if(p.match(uname))
+{
+    
+  return 1;
+
+}  
+else if(p == null || p == "" || p.length==0)
+{   
+
+ 
+   document.myForm.uname.focus();
+     return 0;
+}
+else{
+   
+    document.myForm.uname.focus();
+	return 0;
+  
+}
+
+
+}
+
+/* password validation */
+function passvalid1(){
+  var p=document.forms["myForm"]["pwd"].value;
+var pwd= /^[a-zA-Z0-9]{6}/;
+if(p.match(pwd))
+{
+  
+   return 1;
+ 
+  
+}  
+else  if(p == null || p == "")
+{   
+
+document.myForm.pwd.focus();
+return 0;  
+}  
+else  
+{   
+
+  document.myForm.pwd.focus();
+return 0;  
+}  
+
+
+}
+
+
+
+/*firstname validation */
+
+function firstvalid1()
+{
+
+
+var p=document.forms["myForm"]["fname"].value;
+var fname= /^[a-zA-Z]{2,6}/;
+if(p.match(fname))
+{
+   
+   return 1;
+}  
+
+
+else  if(p == null || p == "")
+{   
+
+return 0;  
+}  
+else  
+{   
+
+  document.myForm.fname.focus();
+return 0;  
+}  
+
+
+}
+
+
+
+
+/* lastname validation */
+
+function lastvalid1(){
+  var p=document.forms["myForm"]["lname"].value;
+var lname= /^[a-zA-Z]{2,15}/;
+if(p.match(lname))
+{
+ 
+  return 1;
+}  
+else  if(p == null || p == "")
+{   
+
+document.myForm.lname.focus();
+return 0;  
+}  
+else  
+{   
+
+  document.myForm.lname.focus();
+return 0;  
+}  
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+function progress()
+{
+
+  var count=0;
+ 
+
+  if(uservalid1()==0){
+      count=count+0;
+     
+              }
+  else{
+         count=count+9;
+             
+       }
+
+  if(passvalid1()==0){
+     count=count+0;
+     
+   }
+   else{
+     count=count+9;
+         }
+
+
+ if(firstvalid1()==0){
+     count=count+0;
+     
+   }
+   else{
+     count=count+9;
+         }
+
+
+		  if(lastvalid1()==0){
+     count=count+0;
+     
+   }
+   else{
+     count=count+9;
+         }
+
+
+   
+
+
+  document.getElementById("myprogress").value=count; 
+
+
+
+}
+
+
+
+
+
+

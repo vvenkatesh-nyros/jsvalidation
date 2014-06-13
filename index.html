@@ -1,0 +1,177 @@
+<html>
+   <head>
+         <!-- Reference of external CSS file which contains all styles of the task -->
+          <link href="./CSS/Styles.css" rel="stylesheet" type="text/css" media="all"/>
+          <!-- Reference of JavaScript  Validations file which contains all Validations -->
+          <script src="./JS/Validations.js" ></script>
+          <!-- Reference of JavaScript  file which contains code for the Progress Bar --> 
+          <script src="./JS/Progress.js" ></script>
+  </head>
+<body onload="document.myForm.uname.focus()">
+  <div id="main1">
+   <div id="header1" >
+           You have Succesfully filled all the details Now submit the form.
+   </div>
+  <div id="main">
+        <div id="header">
+            <progress id="myprogress" value="0" max="99"></progress>
+        </div>
+
+        <h3 align="center">Registration Form</h3>
+     <!-- Starting of Form  --> 
+      <form name="myForm"     onsubmit="return form_validate()" method="post">
+       <!-- Starting of FieldSet1 --> 
+         <fieldset class="field">
+         <legend class="leg">Account Information</legend>
+         <table  cellpadding="5" cellspacing="1">
+         <br> 
+         <tr>
+         <td><label>UserName:<sup style="color:red">*</sup></label></td>
+         <td><input  type="text"  name="uname" class="user_img" onchange="progress()" onblur="form_validate()"></td> 
+         <td><img  class="img1" id="im1" src="./images/arrow_left.png"></td>
+         </tr>
+
+        
+
+         <tr>
+         <td><label>Password:<sup style="color:red">*</sup></label></td>
+         <td><input   type="password" name="pwd" class="key_img" onchange="progress()" onblur="form_validate()"></td>
+          <td><img  id="im2" class="img1" src="./images/arrow_left.png"></td>
+         </tr>
+         </table>
+         </fieldset>
+
+
+           <!-- Ending of FieldSet1 --> 
+
+         <br><br>
+
+
+           <!-- Starting of FieldSet2 --> 
+
+        <fieldset class="field1">
+        <legend class="leg">Personal Information</legend>
+        <table cellpadding="5" cellspacing="1">
+
+        <tr>
+        <td><label>First Name:<sup style="color:red">*</sup></label></td>
+        <td><input type="text" name="fname" class="i1"  onchange="progress()" onblur="form_validate()"></td>
+         <td><img  id="im3" class="img1"  src="./images/arrow_left.png"></td>
+        </tr>
+
+        <tr>
+        <td><label>Last Name:<sup style="color:red">*</sup></label></td>
+        <td><input type="text" name="lname" class="i1" onchange="progress()" onblur="form_validate()"></td>
+         <td><img  id="im4" class="img1"  src="./images/arrow_left.png"></td>
+        </tr>
+
+        <tr>
+        <td><label>Profile Pic:<sup style="color:red">*</sup></label></td>
+        <td><input type="file" name="pic" accept="image/*" onchange="progress()" onblur="form_validate()"></td>
+        <td><img  id="im5" class="img1"  src="./images/arrow_left.png"></td>
+        </tr>
+
+        <tr>
+        <td><label>Gender:<sup style="color:red">*</sup></label></td>
+        <td><input type="radio" name="gend"  checked>Male
+            <input type="radio" name="gend" >FeMale
+        </td>
+        <td><img  id="im6"  class="img1" src="./images/arrow_left.png"></td>
+        </tr>
+
+
+       <tr>
+       <td><label>Date of Birth:<sup style="color:red">*</sup></label></td>
+       <td>
+       <select name="day" onchange="progress()" onblur="form_validate()">
+       <option></option>
+       <option>01</option><option>02</option><option>03</option><option>04</option>
+       <option>05</option>
+       <option>06</option><option>07</option><option>08</option><option>09</option>
+       <option>10</option><option>11</option><option>12</option><option>13</option>
+       <option>14</option><option>15</option><option>16</option><option>17</option>
+       <option>17</option><option>18</option><option>20</option><option>21</option>
+       <option>22</option><option>23</option><option>24</option><option>25</option>
+       <option>26</option><option>27</option><option>28</option><option>29</option>
+       <option>30</option> <option>31</option>
+       </select>
+ 
+
+      <select name="month" onchange="progress()" onblur="form_validate()">
+      <option></option>
+      <option>January</option><option>February</option><option>March</option>
+      <option>April</option><option>May</option><option>June</option><option>July</option>
+      <option>August</option><option>September</option><option>October</option>
+      <option>November</option><option>December</option>
+      </select>
+  
+      <select name="year" onchange="progress()" onblur="form_validate()">
+      <option></option>
+      <option>1985</option><option>1986</option><option>1987</option><option>1988</option>
+      <option>1989</option><option>1990</option><option>1991</option><option>1992</option>
+      <option>1993</option><option>1994</option>
+      </select>
+
+     </td>  
+      <td><img  id="im7" class="img1"  src="./images/arrow_left.png"></td>
+     </tr>
+
+     <tr>
+     <td><label>Hobbies:<sup style="color:red">*</sup></label></td>
+     <td>
+      <input type="radio" name="hobbies" onchange="progress()" onblur="form_validate()">Painting
+      <input type="radio" name="hobbies" onchange="progress()" onblur="form_validate()">Singing
+      <input type="radio" name="hobbies" onchange="progress()" onblur="form_validate()">Travelling
+      <input type="radio" name="hobbies" onchange="progress()" onblur="form_validate()">Dancing
+      <input type="radio" name="hobbies" onchange="progress()" onblur="form_validate()">Gardening
+      <input type="radio" name="hobbies" onchange="progress()" onblur="form_validate()">Others</td>
+       <td><img  id="im8" class="img1" src="./images/arrow_left.png"></td>
+     </tr>
+
+
+     <tr>
+     <td><label>Have been to:<sup style="color:red">*</sup></label></td>
+     <td> <select name="countries" onchange="progress()" onblur="form_validate()" multiple>
+     <option>U.S.A</option>
+     <option>Australia</option>
+     <option>China</option>
+     <option>Japan</option>
+     <option>England</option>
+     <option>Pakistan</option>
+     </select></td>
+      <td><img  id="im9" class="img1" src="./images/arrow_left.png"></td>
+     </tr>
+     </table>
+     </fieldset>
+
+       <!-- Ending of FieldSet2 --> 
+
+     <br><br>
+
+       <!-- Starting of FieldSet3 --> 
+
+     <fieldset class="field2">
+     <legend class="leg">Contact Information</legend>
+     <table>
+     <tr>
+     <td><label>Phone :<sup style="color:red">*</sup></label></td>
+     <td><input type="text" name="pno" onchange="progress()" class="i3"  onblur="form_validate()"></td>
+      <td><img  id="im10" class="img1" src="./images/arrow_left.png"></td>
+     </tr>
+     </table>
+     </fieldset>
+
+       <!-- Ending of FieldSet3 --> 
+
+      <br>
+
+     <input class="sub" type="submit" value="submit">
+
+   </form>
+
+     <!-- End of form --> 
+ </div>
+ </div>
+
+ </body>
+</html>
